@@ -21,6 +21,7 @@
   "homepage": "https://github.com/adeelshahid/dhis2-i18n-generate#readme",
   "dependencies": {
     "argparse": "^1.0.10",
-    "i18next-conv": "^6.0.0"
+    "i18next-conv": "^6.0.0",
+    "rimraf": "^2.6.2"
   }
 }
