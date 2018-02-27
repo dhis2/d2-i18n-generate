@@ -17,7 +17,13 @@ argsParser.addArgument(['-p', '--path'], {
 argsParser.addArgument(['-o', '--output'], {
   dest: 'output',
   defaultValue: './src/locales/',
-  help: 'output directory to place converted JSON files.'
+  help: 'Output directory to place converted JSON files.'
+});
+
+argsParser.addArgument(['-n', '--namespace'], {
+  required: true,
+  dest: 'namespace',
+  help: 'Namespace for app. locale separation.'
 });
 
 var args = argsParser.parseArgs();
@@ -56,8 +62,23 @@ for (var i = 0; i < dstPath.length; i += 1) {
   }
 }
 
-// conversion
+// po/pot files list
 var files = fs.readdirSync(src);
+
+// generate locales
+var handlebars = require('handlebars');
+var langs = [];
+for (var i = 0; i < files.length; i += 1) {
+  langs.push(files[i].split('.')[0]);
+}
+
+var localesHBS = fs.readFileSync('./templates/locales.hbs', 'utf8');
+var localesTemplate = handlebars.compile(localesHBS);
+var localesJS = path.join(dst, 'index.js');
+var localesContext = { langs: langs, namespace: args.namespace };
+fs.writeFileSync(localesJS, localesTemplate(localesContext));
+
+// conversion
 for (var i = 0; i < files.length; i += 1) {
   var fileName = files[i];
   var parts = fileName.split('.');
@@ -65,9 +86,8 @@ for (var i = 0; i < files.length; i += 1) {
   var ext = parts[1];
 
   if (ext === 'po' || ext === 'pot') {
-    console.log('fileName', fileName, 'ext', ext);
     var filePath = path.join(src, fileName);
-    var contents = fs.readFileSync(filePath, 'utf-8');
+    var contents = fs.readFileSync(filePath, 'utf8');
     conv.gettextToI18next(lang, contents).then(
       function(lang, json) {
         var target = path.join(dst, lang);
@@ -76,18 +96,8 @@ for (var i = 0; i < files.length; i += 1) {
         }
 
         var translationsPath = path.join(target, 'translations.json');
-        fs.writeFileSync(translationsPath, json, { encoding: 'utf-8' });
-
+        fs.writeFileSync(translationsPath, json, { encoding: 'utf8' });
       }.bind(this, lang)
     );
   }
 }
-
-// TODO: generate language loading code from template
-var langs = [];
-for (var i = 0; i < files.length; i += 1) {
-  langs.push(files[i].split('.')[0]);
-}
-
-console.log('langs');
-console.log(langs);

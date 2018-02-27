@@ -1,0 +1,16 @@
+import i18n from 'dhis2-i18n';
+
+{{#each langs as |lang key|}}
+import {{ lang }}Translations from './{{ lang }}/translations.json';
+{{/each}}
+
+const namespace = '{{ namespace }}';
+
+{{#each langs as |lang key|}}
+i18n.addResources('{{ lang }}', namespace, {{ lang }}Translations);
+{{/each}}
+
+i18n.setDefaultNamespace(ns);
+i18n.changeLanguage('en');
+
+export default i18n;
