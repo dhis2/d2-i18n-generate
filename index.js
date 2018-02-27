@@ -72,7 +72,7 @@ for (var i = 0; i < files.length; i += 1) {
   langs.push(files[i].split('.')[0]);
 }
 
-var localesHBS = fs.readFileSync('./templates/locales.hbs', 'utf8');
+var localesHBS = fs.readFileSync(path.join(__dirname, 'templates', 'locales.hbs'), 'utf8');
 var localesTemplate = handlebars.compile(localesHBS);
 var localesJS = path.join(dst, 'index.js');
 var localesContext = { langs: langs, namespace: args.namespace };
