@@ -1,0 +1,26 @@
+{
+  "name": "dhis2-i18n-extract",
+  "version": "1.0.0",
+  "description": "Generate i18n.t compatible JSON for dhis2 frontend apps",
+  "main": "index.js",
+  "bin": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adeelshahid/dhis2-i18n-generate.git"
+  },
+  "keywords": [
+    "i18next",
+    "i18n",
+    "dhis2"
+  ],
+  "author": "Muhammad Adeel",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/adeelshahid/dhis2-i18n-generate/issues"
+  },
+  "homepage": "https://github.com/adeelshahid/dhis2-i18n-generate#readme",
+  "dependencies": {
+    "argparse": "^1.0.10",
+    "i18next-conv": "^6.0.0"
+  }
+}
