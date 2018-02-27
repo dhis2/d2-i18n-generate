@@ -5,7 +5,7 @@ var argsParser = new ArgumentParser({
   version: '1.0.0',
   addHelp: true,
   description:
-    'Generate translation strings from pot files to i18n compatible JSON'
+    'Generate JSON files compatible with i18next from po/pot files.'
 });
 
 argsParser.addArgument(['-p', '--path'], {
