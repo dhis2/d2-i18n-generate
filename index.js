@@ -79,6 +79,7 @@ var localesContext = { langs: langs, namespace: args.namespace };
 fs.writeFileSync(localesJS, localesTemplate(localesContext));
 
 // conversion
+console.log('\n> Generating translations .JSON files');
 for (var i = 0; i < files.length; i += 1) {
   var fileName = files[i];
   var parts = fileName.split('.');
@@ -97,6 +98,7 @@ for (var i = 0; i < files.length; i += 1) {
 
         var translationsPath = path.join(target, 'translations.json');
         fs.writeFileSync(translationsPath, json, { encoding: 'utf8' });
+        console.log('> writing JSON translation file for language: ', lang);
       }.bind(this, lang)
     );
   }
