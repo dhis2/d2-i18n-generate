@@ -1,6 +1,6 @@
 {
   "name": "d2-i18n-generate",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Generate JSON files compatible with i18next from po/pot files.",
   "main": "index.js",
   "bin": "./index.js",
@@ -23,6 +23,7 @@
     "argparse": "^1.0.10",
     "handlebars": "^4.0.11",
     "i18next-conv": "^6.0.0",
+    "moment": "^2.22.1",
     "rimraf": "^2.6.2"
   }
 }

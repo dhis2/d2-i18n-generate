@@ -72,10 +72,37 @@ for (var i = 0; i < files.length; i += 1) {
   langs.push(files[i].split('.')[0]);
 }
 
+const langToLocale = {
+  ar: 'ar',
+  bn: 'bn',
+  es: 'es',
+  fa: 'fa',
+  fr: 'fr',
+  he: 'he',
+  it: 'it',
+  jp: 'jp',
+  nb: 'nb',
+  nl: 'nl',
+  pl: 'pl',
+  pt: 'pt',
+  ru: 'ru',
+  sv: 'se',
+  uk: 'uk',
+  ur: 'ur',
+  zh: 'zh-cn'
+};
+const locales = langs.map(function mapLangToLocale() {
+  return langToLocale[lang];
+})
+
 var localesHBS = fs.readFileSync(path.join(__dirname, 'templates', 'locales.hbs'), 'utf8');
 var localesTemplate = handlebars.compile(localesHBS);
 var localesJS = path.join(dst, 'index.js');
-var localesContext = { langs: langs, namespace: args.namespace };
+var localesContext = {
+  langs: langs,
+  locales: locales,
+  namespace: args.namespace
+};
 fs.writeFileSync(localesJS, localesTemplate(localesContext));
 
 // conversion
