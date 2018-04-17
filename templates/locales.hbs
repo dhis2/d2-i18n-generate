@@ -1,7 +1,7 @@
 import i18n from 'd2-i18n';
 
-{{#each locales as |locale key|}}
-import 'moment/locale/{{ locale }}';
+{{#each locales}}
+import 'moment/locale/{{ this }}';
 {{/each}}
 
 {{#each langs as |lang key|}}
