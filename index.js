@@ -75,7 +75,6 @@ for (var i = 0; i < files.length; i += 1) {
 const langToLocale = {
   ar: 'ar',
   bn: 'bn',
-  en: 'en',
   es: 'es',
   fa: 'fa',
   fr: 'fr',
@@ -92,9 +91,13 @@ const langToLocale = {
   ur: 'ur',
   zh: 'zh-cn'
 };
-const locales = langs.map(function mapLangToLocale(lang) {
-  return langToLocale[lang];
-})
+const locales = langs
+  .filter(function filterOutEn(lang) {
+    return lang !== 'en';
+  })
+  .map(function mapLangToLocale(lang) {
+    return langToLocale[lang];
+  })
 
 var localesHBS = fs.readFileSync(path.join(__dirname, 'templates', 'locales.hbs'), 'utf8');
 var localesTemplate = handlebars.compile(localesHBS);
