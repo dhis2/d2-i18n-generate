@@ -86,7 +86,7 @@ const langToLocale = {
   pl: 'pl',
   pt: 'pt',
   ru: 'ru',
-  sv: 'se',
+  sv: 'sv',
   uk: 'uk',
   ur: 'ur',
   zh: 'zh-cn'
