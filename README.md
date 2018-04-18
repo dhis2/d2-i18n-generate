@@ -1,14 +1,14 @@
 ## Install
 
-```bash
-$> npm install --save d2-i18n-generate
+```shell
+$ npm install --save d2-i18n-generate
 ```
 
 ## Usage
 
 Generate JSON files compatible with i18next from po/pot files.
-```bash
-d2-i18n-generate [-h] [-v] [-p PATH] [-o OUTPUT] -n NAMESPACE
+```shell
+$ d2-i18n-generate [-h] [-v] [-p PATH] [-o OUTPUT] -n NAMESPACE
 
 Generate JSON files compatible with i18next from po/pot files.
 
