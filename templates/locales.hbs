@@ -1,8 +1,10 @@
 import i18n from 'd2-i18n';
-
+import moment from 'moment'
 {{#each locales}}
 import 'moment/locale/{{ this }}';
 {{/each}}
+
+moment.locale('en')
 
 {{#each langs as |lang key|}}
 import {{ lang }}Translations from './{{ lang }}/translations.json';
