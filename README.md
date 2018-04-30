@@ -1,7 +1,7 @@
 ## Install
 
-```shell
-$ npm install --save d2-i18n-generate
+```bash
+$ yarn add @dhis2/d2-i18n-generate
 ```
 
 ## Usage
