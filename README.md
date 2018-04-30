@@ -1,14 +1,14 @@
 ## Install
 
 ```bash
-$ yarn add @dhis2/d2-i18n-generate
+$> yarn add @dhis2/d2-i18n-generate
 ```
 
 ## Usage
 
 Generate JSON files compatible with i18next from po/pot files.
-```shell
-$ d2-i18n-generate [-h] [-v] [-p PATH] [-o OUTPUT] -n NAMESPACE
+```bash
+$> d2-i18n-generate [-h] [-v] [-p PATH] [-o OUTPUT] -n NAMESPACE
 
 Generate JSON files compatible with i18next from po/pot files.
 
