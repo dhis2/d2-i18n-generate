@@ -25,5 +25,8 @@
     "i18next-conv": "^6.0.0",
     "moment": "^2.22.1",
     "rimraf": "^2.6.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
