@@ -81,6 +81,7 @@ const langToLocale = {
   he: 'he',
   it: 'it',
   jp: 'jp',
+  lo: 'lo',
   nb: 'nb',
   nl: 'nl',
   pl: 'pl',
@@ -89,6 +90,7 @@ const langToLocale = {
   sv: 'sv',
   uk: 'uk',
   ur: 'ur',
+  vi: 'vi',
   zh: 'zh-cn'
 };
 const locales = langs
