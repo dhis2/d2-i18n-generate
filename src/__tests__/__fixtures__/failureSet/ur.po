@@ -1,0 +1,21 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"POT-Creation-Date: 2018-06-19T14:04:31.567Z\n"
+"PO-Revision-Date: 2018-06-19T14:04:31.567Z\n"
+
+msgid "Are you sure you want to delete dashboard \"{{ dashboardName }}\"?"
+msgstr "کیا آپ واقعی ڈیشبورڈ ایپ \"{{ dashboardName }}\" کو حذف کرنا چاہتے ہیں؟"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Continue editing"
+msgstr "ترمیم جاری رکھیں"
+
+msgid "Confirm delete dashboard"
+msgstr "ڈیشبورڈ حذف کریں"

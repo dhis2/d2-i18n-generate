@@ -8,6 +8,9 @@
     "type": "git",
     "url": "git+https://github.com/dhis2/d2-i18n-generate.git"
   },
+  "scripts": {
+      "test": "mocha ./src/__tests__"
+  },
   "keywords": [
     "i18next",
     "i18n",
@@ -28,5 +31,10 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "sinon": "^7.2.2"
   }
 }
