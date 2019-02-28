@@ -1,5 +1,7 @@
 ## Install
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/dhis2/d2-i18n-generate.svg)](https://greenkeeper.io/)
+
 ```bash
 $> yarn add @dhis2/d2-i18n-generate
 ```
