@@ -1,6 +1,6 @@
 {
   "name": "@dhis2/d2-i18n-generate",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Generate JSON files compatible with i18next from po/pot files.",
   "main": "index.js",
   "bin": "./index.js",
