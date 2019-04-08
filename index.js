@@ -87,6 +87,7 @@ const langToLocale = {
   pl: 'pl',
   pt: 'pt',
   ru: 'ru',
+  tg: 'tg',
   sv: 'sv',
   uk: 'uk',
   ur: 'ur',
@@ -100,6 +101,7 @@ const locales = langs
   .map(function mapLangToLocale(lang) {
     return langToLocale[lang];
   })
+  .filter(locale => locale)
 
 var localesHBS = fs.readFileSync(path.join(__dirname, 'templates', 'locales.hbs'), 'utf8');
 var localesTemplate = handlebars.compile(localesHBS);
