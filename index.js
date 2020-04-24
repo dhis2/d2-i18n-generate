@@ -112,15 +112,12 @@ const locales = langs
 var localesHBS = fs.readFileSync(path.join(__dirname, 'templates', 'locales.hbs'), 'utf8');
 var localesTemplate = handlebars.compile(localesHBS);
 var localesJS = path.join(dst, 'index.js');
-var isStandalone = true;
-if (args.lib) {
-  isStandalone = false;
-}
+
 var localesContext = {
   langs: langs,
   locales: locales,
   namespace: args.namespace,
-  standalone: isStandalone,
+  standalone: !args.lib
 };
 fs.writeFileSync(localesJS, localesTemplate(localesContext));
 
