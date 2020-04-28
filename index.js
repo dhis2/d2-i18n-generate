@@ -26,6 +26,12 @@ argsParser.addArgument(['-n', '--namespace'], {
   help: 'Namespace for app. locale separation.'
 });
 
+argsParser.addArgument(['-l', '--lib'], {
+  dest: 'lib',
+  action: 'storeTrue',
+  help: 'Generate strings for library'
+});
+
 var args = argsParser.parseArgs();
 
 var fs = require('fs');
@@ -106,10 +112,12 @@ const locales = langs
 var localesHBS = fs.readFileSync(path.join(__dirname, 'templates', 'locales.hbs'), 'utf8');
 var localesTemplate = handlebars.compile(localesHBS);
 var localesJS = path.join(dst, 'index.js');
+
 var localesContext = {
   langs: langs,
   locales: locales,
-  namespace: args.namespace
+  namespace: args.namespace,
+  standalone: !args.lib
 };
 fs.writeFileSync(localesJS, localesTemplate(localesContext));
 
